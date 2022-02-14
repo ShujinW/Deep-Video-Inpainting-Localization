@@ -1,2 +1,24 @@
-# Deep-Video-Inpainting-Localization
-Under construction.
+# DEEP VIDEO INPAINTING LOCALIZATION USING SPATIAL AND TEMPORAL TRACES
+
+
+
+## Requirements
+- Python 3
+- Tensorflow >= 1.10.0
+
+
+## Usage
+### Train
+First, prepare the training data so that the images are stored in "xxx/png/xxx/" , the corresponding groundtruth masks are stored in "xxx/msk/xxx/", the forward flows are stored in "xxx/forward/xxx" and the backward flows are stored in "xxx/backward/xxx". Then, run the following command.
+```
+python3 hp_fcn.py --data_dir <path_to_the_training_dataset> --logdir <path_to_the directory_for_saving_model_and_log> --mode train
+```
+
+### Test
+Prepare the testing data in a similar way and run the code as follows.
+```
+python3 hp_fcn.py --data_dir <path_to_the_testing_dataset> --logdir <path_to_the directory_where_the_trained_model_is_saved> --mode test
+```
+
+ 
+

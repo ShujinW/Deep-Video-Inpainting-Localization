@@ -8,7 +8,7 @@
 
 
 ## Usage
-### Train
+### Required Data
 * First, prepare the training data so that the images are stored in "xxx/png/xxx/" and the corresponding groundtruth masks are stored in "xxx/msk/xxx/".
 
 * Second, generate the flows by RAFT(https://github.com/princeton-vl/RAFT), so that the forward flows are stored in "xxx/forward/xxx" and the backward flows are stored in "xxx/backward/xxx". 

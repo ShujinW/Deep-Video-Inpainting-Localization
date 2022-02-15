@@ -18,7 +18,7 @@ Then, run the following command.
 ```
 python3 hp_flow_lstm.py --data_dir <path_to_the_training_dataset> --logdir <path_to_the directory_for_saving_model_and_log> --mode train
 ```
-for example,
+For example,
 ```
 python3 hp_flow_lstm.py --data_dir example_data/png/* --logdir save/model --mode train
 ```

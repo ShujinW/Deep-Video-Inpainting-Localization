@@ -20,7 +20,7 @@ python3 hp_flow_lstm.py --data_dir <path_to_the_training_dataset> --logdir <path
 ```
 For example,
 ```
-python3 hp_flow_lstm.py --data_dir example_data/png/* --logdir save/model --mode train
+python3 hp_flow_lstm.py --data_dir example_data/png --logdir save/model --mode train
 ```
 
 ### Test

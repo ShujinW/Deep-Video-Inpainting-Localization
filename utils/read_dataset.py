@@ -120,9 +120,9 @@ def flow_output(fn):
             print('Magic number incorrect. Invalid .flo file')
             return None
         else:
-            w = int(np.fromfile(f, np.int32, count=1))
-            h = int(np.fromfile(f, np.int32, count=1))
-            data = np.fromfile(f, np.int16, count=2 * w * h)
+            w = int(np.fromfile(f, np.float32, count=1))
+            h = int(np.fromfile(f, np.float32, count=1))
+            data = np.fromfile(f, np.float32, count=2 * w * h)
             data = np.array(data, dtype=np.float32)
             return np.reshape(data, (h, w, 2))
 

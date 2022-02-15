@@ -9,9 +9,15 @@
 
 ## Usage
 ### Train
-First, prepare the training data so that the images are stored in "xxx/png/xxx/" , the corresponding groundtruth masks are stored in "xxx/msk/xxx/", the forward flows are stored in "xxx/forward/xxx" and the backward flows are stored in "xxx/backward/xxx". Then, run the following command.
+First, prepare the training data so that the images are stored in "xxx/png/xxx/" and the corresponding groundtruth masks are stored in "xxx/msk/xxx/".
+Second, generate the flows by RAFT-net so that the forward flows are stored in "xxx/forward/xxx" and the backward flows are stored in "xxx/backward/xxx". 
+Then, run the following command.
 ```
 python3 hp_fcn.py --data_dir <path_to_the_training_dataset> --logdir <path_to_the directory_for_saving_model_and_log> --mode train
+```
+for example,
+```
+python3 hp_fcn.py --data_dir example_data/png/* --logdir save/model --mode train
 ```
 
 ### Test

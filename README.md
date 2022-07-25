@@ -13,7 +13,7 @@
 
 * Second, generate the flows by RAFT(https://github.com/princeton-vl/RAFT), so that the forward flows are stored in "xxx/forward/xxx" and the backward flows are stored in "xxx/backward/xxx". 
 
-This weight was trained by the FGVC dataset. 
+* (Optional) This weight was trained by the FGVC dataset. 
 https://pan.baidu.com/s/1IzoruGkNuCOVYA4iyIZwew (sjyx)
 
 Then, run the following command.

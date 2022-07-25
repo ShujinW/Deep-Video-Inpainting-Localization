@@ -15,7 +15,7 @@ slim = tf.contrib.slim
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 #os.environ['CUDA_DEVICE_ORDER'] = 'PCI_BUS_ID'
-os.environ['CUDA_VISIBLE_DEVICES'] = '5'
+os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 
 img_shape = [240,432]
 # dataset
@@ -43,7 +43,7 @@ tf.flags.DEFINE_float('focal_gamma', 2.0, 'gamma of focal loss')
 tf.flags.DEFINE_float('weight_decay', 1e-4, 'Learning rate for Optimizer')
 tf.flags.DEFINE_integer('shuffle_seed', None, 'Seed for shuffling images')
 # logs
-tf.flags.DEFINE_string('logdir', '/home/weishujin/Codes/tensorflow/Deep_inpainting_localization/results/h264/CQP23/model_hp_flow_stream2/STTN_FFIT', 'path to logs directory')
+tf.flags.DEFINE_string('logdir', '', 'path to logs directory')
 tf.flags.DEFINE_integer('verbose_time', 10, 'verbose times in each epoch')
 tf.flags.DEFINE_integer('valid_time', 1, 'validation times in each epoch')
 tf.flags.DEFINE_integer('keep_ckpt', 1, 'num of checkpoint files to keep')
@@ -223,21 +223,19 @@ def main(argv=None):
             if step > 0 and step % (itr_per_epoch//FLAGS.valid_time) == 0:
                 sess.run(iterator_vld.initializer)
                 sess.run(tf.variables_initializer(local_vars_metrics))
-                TNR, F1, MCC, IoU, Recall, Prec, Auc = [], [], [], [], [], [], []
+                TNR, F1, MCC, IoU, Recall, Prec = [], [], [], [], [], []
                 warnings.simplefilter('ignore',RuntimeWarning)
                 while True:
                     try:
                         labels_, preds_, _ = sess.run([labels, preds, update_metrics_count], feed_dict={handle: handle_vld, is_training: False})
                         for i in range(labels_.shape[0]):
                             recall, tnr, prec, f1, mcc, iou, fn, tp,_ = utils.metrics.get_metrics(labels_[i],preds_[i])
-                            auc = metrics.roc_auc_score(labels_[i].reshape(-1), preds_[i].reshape(-1))
                             TNR.append(tnr)
                             F1.append(f1)
                             MCC.append(mcc)
                             IoU.append(iou)
                             Recall.append(recall)
                             Prec.append(prec)
-                            Auc.append(auc)
                     except tf.errors.OutOfRangeError:
                         break
                 mean_loss_, mean_accuracy_, summary_str = sess.run([mean_loss, mean_accuracy, summary_op])

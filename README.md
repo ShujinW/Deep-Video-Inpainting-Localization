@@ -1,6 +1,7 @@
 # DEEP VIDEO INPAINTING LOCALIZATION USING SPATIAL AND TEMPORAL TRACES
 
-![img](https://github.com/ShujinW/Deep-Video-Inpainting-Localization/blob/main/VID_show.gif)
+<img src="https://github.com/ShujinW/Deep-Video-Inpainting-Localization/blob/main/VID_show.gif" width=100% height=100% 
+class="center">
 
 ## Requirements
 - Python 3

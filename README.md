@@ -1,5 +1,5 @@
 # DEEP VIDEO INPAINTING LOCALIZATION USING SPATIAL AND TEMPORAL TRACES
-
+ 
 ![gif]("https://github.com/ShujinW/Deep-Video-Inpainting-Localization/blob/main/VID_show.gif?raw=true")
 
 ## Requirements

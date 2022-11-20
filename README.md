@@ -1,6 +1,6 @@
 # DEEP VIDEO INPAINTING LOCALIZATION USING SPATIAL AND TEMPORAL TRACES
 
-<img src="VID_show.gif" width=100% height=100% class="center">
+[!img]("VID_show.gif")
 
 ## Requirements
 - Python 3
